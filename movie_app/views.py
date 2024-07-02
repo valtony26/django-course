@@ -5,7 +5,7 @@ from .models import Movie
 
 
 def show_all_movie(request):
-    movies = Movie.objects.all()
+    movies = Movie.objects.order_by('year')
     return render(request, 'movie_app/all_movies.html', {
         'movies':movies
     })
