@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Список всех режиссёров {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+    <h2>Список всех режиссёров</h2>
+    <ul>
+        {% for director in directors %}
+            <li>
+                <a href="{{ director.get_url }}">{{ director.first_name }} {{director.last_name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+</body>
+</html>
